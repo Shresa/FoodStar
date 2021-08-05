@@ -1,4 +1,4 @@
-import { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 const RestaurantSchema = new mongoose.Schema({
     name: {type: String, required: true },
@@ -22,6 +22,10 @@ const RestaurantSchema = new mongoose.Schema({
     },
     reviews: [{ type: mongoose.Types.ObjectId, ref: "Reviews"}],
     photos: { type: mongoose.Types.ObjectId, ref: "Images"},
-});
+},
+{
+    timestamps: true,
+}
+);
 
 export const RestaurantModel = mongoose.model("Restaurants", RestaurantSchema);
