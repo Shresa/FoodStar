@@ -12,6 +12,7 @@ import googleAuthConfig from "./config/google.config";
 // microservice routes
 import Auth from "./API/Auth";
 import Restaurant from "./API/Restaurant";
+import Food from "./API/Food";
 
 // Database connection
 import ConnectDB from "./database/connection";
@@ -33,6 +34,7 @@ googleAuthConfig(passport);
 // Application Routes
 foodstar.use("/auth", Auth);
 foodstar.use("/restaurant", Restaurant);
+foodstar.use("/food", Food);
 
 
 foodstar.get("/", (req, res) => res.json({message: "Setup success"}));
