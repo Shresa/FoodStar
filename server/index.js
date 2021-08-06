@@ -5,6 +5,9 @@ require("dotenv").config();
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import passport from "passport";
+// configs
+import googleAuthConfig from "./config/google.config";
 
 // microservice routes
 import Auth from "./API/Auth";
@@ -19,6 +22,12 @@ foodstar.use(express.json());
 foodstar.use(express.urlencoded({ extended: false}));
 foodstar.use(helmet());
 foodstar.use(cors());
+foodstar.use(passport.initialize());
+foodstar.use(passport.session());
+
+
+// passport cofiguration
+googleAuthConfig(passport);
 
 // Application Routes
 foodstar.use("/auth", Auth);
