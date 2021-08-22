@@ -13,6 +13,7 @@ import googleAuthConfig from "./config/google.config";
 import Auth from "./API/Auth";
 import Restaurant from "./API/Restaurant";
 import Food from "./API/Food";
+import Image from "./API/Image";
 
 // Database connection
 import ConnectDB from "./database/connection";
@@ -35,7 +36,7 @@ googleAuthConfig(passport);
 foodstar.use("/auth", Auth);
 foodstar.use("/restaurant", Restaurant);
 foodstar.use("/food", Food);
-
+foodstar.use("/image", Image);
 
 foodstar.get("/", (req, res) => res.json({message: "Setup success"}));
 
