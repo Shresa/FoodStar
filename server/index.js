@@ -8,6 +8,7 @@ import helmet from "helmet";
 import passport from "passport";
 // configs
 import googleAuthConfig from "./config/google.config";
+import routeConfig from "./config/route.config";
 
 // microservice routes
 import Auth from "./API/Auth";
@@ -34,6 +35,7 @@ foodstar.use(passport.session());
 
 // passport cofiguration
 googleAuthConfig(passport);
+routeConfig(passport);
 
 // Application Routes
 foodstar.use("/auth", Auth);
