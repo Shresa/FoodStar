@@ -17,6 +17,8 @@ import Food from "./API/Food";
 import Image from "./API/Image";
 import Order from "./API/orders";
 import Reviews from "./API/reviews";
+import User from "./API/user";
+import Menu from "./API/menu";
 
 
 // Database connection
@@ -44,6 +46,8 @@ foodstar.use("/food", Food);
 foodstar.use("/image", Image);
 foodstar.use("/order", Order);
 foodstar.use("/reviews", Reviews);
+foodstar.use("/user", User);
+foodstar.use("/menu", Menu);
 
 foodstar.get("/", (req, res) => res.json({message: "Setup success"}));
 
