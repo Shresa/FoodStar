@@ -6,6 +6,7 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import passport from "passport";
+
 // configs
 import googleAuthConfig from "./config/google.config";
 import routeConfig from "./config/route.config";
@@ -19,6 +20,7 @@ import Order from "./API/orders";
 import Reviews from "./API/reviews";
 import User from "./API/user";
 import Menu from "./API/menu";
+import MailService from "./API/Mail";
 
 
 // Database connection
@@ -33,7 +35,7 @@ foodstar.use(helmet());
 foodstar.use(cors());
 foodstar.use(passport.initialize());
 foodstar.use(passport.session());
-
+foodstar.use("/mail", MailService);
 
 // passport cofiguration
 googleAuthConfig(passport);
