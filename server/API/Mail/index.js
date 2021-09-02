@@ -1,4 +1,4 @@
-/ Library
+// Library
 import express from "express";
 import mailgun from "mailgun-js";
 
