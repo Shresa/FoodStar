@@ -51,7 +51,7 @@ export default function SignIn({ isOpen, setIsOpen }) {
                 ></Dialog.Title>
                 <div className="mt-2 flex flex-col gap-3 w-full">
                   <button className="py-2 justify-center rounded-lg flex items-center gap-2 w-full border border-gray-400 bg-white text-gray-700 hover:bg-gray-100">
-                    Signin With Google <FcGoogle />
+                    Sign in With Google <FcGoogle />
                   </button>
 
                   <form className="flex flex-col gap-3">
