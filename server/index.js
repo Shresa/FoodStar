@@ -19,9 +19,9 @@ import Image from "./API/Image";
 import Order from "./API/orders";
 import Reviews from "./API/reviews";
 import User from "./API/user";
-import Menu from "./API/menu";
+import Menu from "./API/Menu";
 import MailService from "./API/Mail";
-
+import Payments from "./API/Payments";
 
 // Database connection
 import ConnectDB from "./database/connection";
@@ -50,6 +50,7 @@ foodstar.use("/order", Order);
 foodstar.use("/reviews", Reviews);
 foodstar.use("/user", User);
 foodstar.use("/menu", Menu);
+foodstar.use("/payments", Payments);
 
 foodstar.get("/", (req, res) => res.json({message: "Setup success"}));
 
